@@ -1,0 +1,19 @@
+@use 'variables' as variables;
+
+a {
+  color: variables.$primary-color; // Use the primary color variable
+  text-decoration: none;
+
+  &:hover {
+    color: rgb(157, 95, 14);
+  }
+}
+
+div {
+  color: variables.$text-color2; // Use the text color variable
+  border: 1px solid variables.$secondary-color; // Use the secondary color for a border
+}
+
+h3 {
+  color: variables.$heading-color; // Use the heading color variable
+}
