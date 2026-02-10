@@ -1,0 +1,12 @@
+@use 'variables' as vars;
+
+a {
+  color: vars.$primary-color;
+  text-align: center;
+  text-decoration: double;
+
+  &:hover {
+    color: vars.$hover-color;
+    text-decoration: none;
+  }
+}
