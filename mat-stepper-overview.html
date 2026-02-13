@@ -1,0 +1,33 @@
+<!-- completed="false" means one module needs to do completed and make it linear first -->
+<mat-horizontal-stepper linear>
+  <mat-step label="Shipping Address" completed=false>
+    <p>Shipping</p></mat-step
+  >
+  <mat-step label="Billing Address" completed=false
+    ><p>Billing</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div></mat-step
+  >
+  <mat-step label="Place an Order" completed=false
+    ><p>Place an Order</p></mat-step
+  >
+</mat-horizontal-stepper>
+
+<!-- vertical stepper -->
+<mat-vertical-stepper linear>
+  <mat-step label="Shipping Address" completed=false>
+    <p>Shipping</p></mat-step
+  >
+  <mat-step label="Billing Address" completed=false optional
+    ><p>Billing</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div></mat-step
+  >
+  <mat-step label="Place an Order" completed=false
+    ><p>Place an Order</p></mat-step
+  >
+</mat-vertical-stepper>
