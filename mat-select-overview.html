@@ -1,0 +1,51 @@
+<mat-form-field >
+  <mat-label>Options</mat-label>
+  <mat-select>
+    <mat-option value="m">Male</mat-option>
+    <mat-option value="f">Female</mat-option>
+    <mat-option value="o">Other</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field >
+  <mat-label>Options</mat-label>
+  <mat-select [(value)]="selectedValue">
+    <mat-option value="male">Male</mat-option>
+    <mat-option value="female">Female</mat-option>
+    <mat-option value="others">Other</mat-option>
+  </mat-select>
+</mat-form-field>
+{{selectedValue}}
+
+<!-- if none value exists -->
+<mat-form-field >
+  <mat-label>Options</mat-label>
+  <mat-select [(value)]="selectedValue">
+    <mat-option>None</mat-option>
+    <mat-option value="male">Male</mat-option>
+    <mat-option value="female">Female</mat-option>
+    <mat-option value="others">Other</mat-option>
+  </mat-select>
+</mat-form-field>
+{{selectedValue}}
+
+
+<!-- if multiple options value exists -->
+<mat-form-field>
+  <mat-label>Options</mat-label>
+  <mat-select [(value)]="selectedValue"  multiple>
+    <mat-option>None</mat-option>
+
+    <mat-optgroup label="Web">
+      <mat-option value="male">Male</mat-option>
+      <mat-option value="female">Female</mat-option>
+      <mat-option value="others">Other</mat-option>
+    </mat-optgroup>
+
+    <mat-optgroup label="Age">
+      <mat-option value="age > 10 "> > 10 </mat-option>
+      <mat-option value="age < 50 "> < 50 </mat-option>
+    </mat-optgroup>
+  </mat-select>
+</mat-form-field>
+{{selectedValue}}
