@@ -1,0 +1,77 @@
+<!-- MatNativeDateModule & MatDatepickerModule -->
+<!-- calender symbol on left by default -->
+<mat-form-field>
+    <input matInput [matDatepicker]="myPicker">
+    <mat-datepicker-toggle [for]="myPicker"></mat-datepicker-toggle>
+    <mat-datepicker  #myPicker></mat-datepicker>
+</mat-form-field>
+
+<!-- calender symbol on left by matPreffix -->
+<!-- MatNativeDateModule & MatDatepickerModule -->
+<mat-form-field>
+    <input matInput [matDatepicker]="myPicker1">
+    <mat-datepicker-toggle [for]="myPicker1" matPreffix></mat-datepicker-toggle>
+    <mat-datepicker  #myPicker1></mat-datepicker>
+</mat-form-field>
+
+<!-- calender symbol on right by matSuffix -->
+<!-- MatNativeDateModule & MatDatepickerModule -->
+<mat-form-field>
+    <input matInput [matDatepicker]="myPicker2">
+    <mat-datepicker-toggle [for]="myPicker2" matSuffix></mat-datepicker-toggle>
+    <mat-datepicker  #myPicker2></mat-datepicker>
+</mat-form-field>
+<!-- calender startView="year" -->
+<mat-form-field>
+    <input matInput [matDatepicker]="myPicker">
+    <mat-datepicker-toggle [for]="myPicker"></mat-datepicker-toggle>
+    <mat-datepicker  #myPicker startView="year"></mat-datepicker>
+</mat-form-field>
+<br>
+<!-- calender startView="month" -->
+<mat-form-field>
+    <input matInput [matDatepicker]="myPicker1">
+    <mat-datepicker-toggle [for]="myPicker1"></mat-datepicker-toggle>
+    <mat-datepicker  #myPicker1 startView="month"></mat-datepicker>
+</mat-form-field>
+<br>
+<!-- calender startView="multi-year" -->
+<mat-form-field>
+    <input matInput [matDatepicker]="myPicker2">
+    <mat-datepicker-toggle [for]="myPicker2"></mat-datepicker-toggle>
+    <mat-datepicker  #myPicker2 startView="multi-year"></mat-datepicker>
+</mat-form-field>
+<br>
+<!-- calender with min date and max date -->
+<mat-form-field>
+    <input matInput [matDatepicker]="myPicker" [min]="minDate" [max]="maxDate">
+    <mat-datepicker-toggle [for]="myPicker"></mat-datepicker-toggle>
+    <mat-datepicker  #myPicker startView="year"></mat-datepicker>
+</mat-form-field>
+<br>
+
+<!-- calender with min date and max date with ts file -->
+export class CheckboxOverviewExample {
+  minDate = new Date();
+  maxDate = new Date(2027,3,1);
+}
+
+<!-- calender with min date and max date -->
+<!-- date filter -->
+<mat-form-field>
+    <input matInput [matDatepicker]="myPicker" [min]="minDate" [max]="maxDate" [matDatepickerFilter]="dateFilter">
+    <mat-datepicker-toggle [for]="myPicker"></mat-datepicker-toggle>
+    <mat-datepicker  #myPicker startView="year"></mat-datepicker>
+</mat-form-field>
+<br>
+
+<!-- calender with min date and max date and datefilter ts file -->
+export class CheckboxOverviewExample {
+  minDate = new Date();
+  maxDate = new Date(2027,3,1);
+
+  dateFilter = date => {
+    const day = date.getDay();
+    return day !=0 && day != 6;
+  };
+}
