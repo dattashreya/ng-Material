@@ -1,0 +1,45 @@
+<button
+  mat-flat-button
+  matButton="filled"
+  color="primary"
+  (click)="openSnackBarMethod('items deleted', 'Dismiss')"
+>
+  Snack bar
+</button>
+<br />
+<button 
+  mat-flat-button 
+  color="warn"
+  (click)="openParty('items changed', 'Undo')"
+>Bar &nbsp; party</button>
+
+
+import {Component} from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
+/**
+ * @title Basic expansion panel
+ */
+@Component({
+  selector: 'expansion-overview-example',
+  templateUrl: 'expansion-overview-example.html',
+  styleUrls: ['expansion-overview-example.css'],
+})
+export class ExpansionOverviewExample {
+  panelOpenState = false;
+  constructor(private matSnackBar: MatSnackBar) {}
+
+  openSnackBarMethod(message: any, action: any) {
+    this.matSnackBar.open(message, action);
+  }
+  openParty(message: any, action: any) {
+    let matSnackBarRef = this.matSnackBar.open(message, action, {duration: 2000});
+
+    matSnackBarRef.onAction().subscribe(() => {
+      console.log('undo opration done...')
+    });
+  }
+
+  
+}
+
